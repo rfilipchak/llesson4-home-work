@@ -50,9 +50,9 @@ public class MultiplicationLessonService {
         char[] multipliers = String.valueOf(multiplier).toCharArray();
         for (int i =multipliers.length-1; i>=0 ; i--) {
             int value = number * Character.getNumericValue(multipliers[i]);
-            steps.append(startString.toString());
-            steps.append(value);
-            steps.append(enter);
+            steps.append(startString.toString())
+                    .append(value)
+                    .append(enter);
             if (startString.length() - 1 >= 0) startString.deleteCharAt(startString.length() - 1);
         }
         return steps.toString();
