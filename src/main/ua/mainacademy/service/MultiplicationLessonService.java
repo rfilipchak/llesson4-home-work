@@ -11,23 +11,34 @@ public class MultiplicationLessonService {
     private static final String enter = "\n";
 
     public static String getMultiplicationLessonForNumbers(int number, int multiplier) {
+        String multiplicationLesson;
         StringBuffer sb = new StringBuffer();
         int positiveNumber = Math.abs(number);
         int positiveMultiplier = Math.abs(multiplier);
         long result = (long) positiveNumber * positiveMultiplier;
 
-        String multiplicationLesson = sb.append(getBuiltSpaces(positiveNumber, result).append(positiveNumber))
-                .append(enter)
-                .append(getBuiltSpaces(positiveMultiplier, result).append(positiveMultiplier)).append(enter)
-                .append(getBuiltSpaces(positiveMultiplier, result).append(divider(positiveMultiplier)))
-                .append(enter)
-                .append(multiplicationSteps(positiveNumber, positiveMultiplier, result))
-                .append(divider(result))
-                .append(enter)
-                .append(result)
-                .toString();
+        if (positiveNumber <= 10 || positiveMultiplier <= 10) {
+            multiplicationLesson = sb.append(getBuiltSpaces(positiveNumber, result).append(positiveNumber))
+                    .append(enter)
+                    .append(getBuiltSpaces(positiveMultiplier, result).append(positiveMultiplier)).append(enter)
+                    .append(divider(result))
+                    .append(enter)
+                    .append(result)
+                    .toString();
+        } else {
+            multiplicationLesson = sb.append(getBuiltSpaces(positiveNumber, result).append(positiveNumber))
+                    .append(enter)
+                    .append(getBuiltSpaces(positiveMultiplier, result).append(positiveMultiplier)).append(enter)
+                    .append(getBuiltSpaces(positiveMultiplier, result).append(divider(positiveMultiplier)))
+                    .append(enter)
+                    .append(multiplicationSteps(positiveNumber, positiveMultiplier, result))
+                    .append(divider(result))
+                    .append(enter)
+                    .append(result)
+                    .toString();
+        }
 
-        if ( number < 0 || multiplier < 0 ) {
+        if ((number < 0 || multiplier < 0) && result!=0) {
             LOGGER.info(String.format("Get start with multiplication of prime numbers: %s and %s  result is: \n%s \nNegative value.", number, multiplier,
                     multiplicationLesson));
         } else {
@@ -48,7 +59,7 @@ public class MultiplicationLessonService {
         StringBuilder steps = new StringBuilder();
         StringBuilder startString = getBuiltSpaces(number, result);
         char[] multipliers = String.valueOf(multiplier).toCharArray();
-        for (int i =multipliers.length-1; i>=0 ; i--) {
+        for (int i = multipliers.length - 1; i >= 0; i--) {
             int value = number * Character.getNumericValue(multipliers[i]);
             steps.append(startString.toString())
                     .append(value)
