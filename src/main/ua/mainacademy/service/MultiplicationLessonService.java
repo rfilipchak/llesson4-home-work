@@ -14,7 +14,7 @@ public class MultiplicationLessonService {
         StringBuffer sb = new StringBuffer();
         int positiveNumber = Math.abs(number);
         int positiveMultiplier = Math.abs(multiplier);
-        int result = positiveNumber * positiveMultiplier;
+        long result = (long) positiveNumber * positiveMultiplier;
 
         String multiplicationLesson = sb.append(getBuiltSpaces(positiveNumber, result).append(positiveNumber))
                 .append(enter)
@@ -37,14 +37,14 @@ public class MultiplicationLessonService {
         return multiplicationLesson;
     }
 
-    private static String divider(int value) {
+    private static String divider(long value) {
         StringBuilder result = new StringBuilder();
         int lengthValue = String.valueOf(value).toCharArray().length;
         result.append(dividedLine.repeat(lengthValue));
         return result.toString();
     }
 
-    private static String multiplicationSteps(int number, int multiplier, int result) {
+    private static String multiplicationSteps(int number, int multiplier, long result) {
         StringBuilder steps = new StringBuilder();
         StringBuilder startString = getBuiltSpaces(number, result);
         char[] multipliers = String.valueOf(multiplier).toCharArray();
@@ -58,7 +58,7 @@ public class MultiplicationLessonService {
         return steps.toString();
     }
 
-    private static StringBuilder getBuiltSpaces(int a, int b) {
+    private static StringBuilder getBuiltSpaces(long a, long b) {
         StringBuilder spaces = new StringBuilder();
         int spacesAmount = String.valueOf(b).toCharArray().length - String.valueOf(a).toCharArray().length;
         spaces.append(space.repeat(Math.max(0, spacesAmount)));

@@ -30,7 +30,7 @@ public class Application {
 
         LOGGER.info(String.format("Max value of polidromes is %s", ResearchPalindromeService.getPolindromeMaxValue(57, 150)));
 
-        MultiplicationLessonService.getMultiplicationLessonForNumbers(1, 101);
+        MultiplicationLessonService.getMultiplicationLessonForNumbers(1345, 1111111111);
 
     }
 }
