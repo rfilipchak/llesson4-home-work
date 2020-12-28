@@ -4,6 +4,7 @@ import main.ua.mainacademy.modelshapes.Circle;
 import main.ua.mainacademy.modelshapes.Shape;
 import main.ua.mainacademy.modelshapes.Square;
 import main.ua.mainacademy.modelshapes.Triangle;
+import main.ua.mainacademy.service.MultiplicationLessonService;
 import main.ua.mainacademy.service.ResearchPalindromeService;
 import main.ua.mainacademy.service.ShapeAreaService;
 
@@ -27,6 +28,9 @@ public class Application {
                     s.getClass().getSimpleName(), ShapeAreaService.getArea(s)));
         }
 
-        LOGGER.info(String.format("Max value of polidromes is %s", ResearchPalindromeService.getPolindromeMaxValue(100, 1000)));
+        LOGGER.info(String.format("Max value of polidromes is %s", ResearchPalindromeService.getPolindromeMaxValue(57, 150)));
+
+        MultiplicationLessonService.getMultiplicationLessonForNumbers(1, 101);
+
     }
 }

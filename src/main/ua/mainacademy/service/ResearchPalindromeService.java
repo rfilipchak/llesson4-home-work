@@ -1,7 +1,5 @@
 package main.ua.mainacademy.service;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Logger;
 
 public class ResearchPalindromeService {
@@ -13,7 +11,6 @@ public class ResearchPalindromeService {
             LOGGER.warning(String.format("Incorrect values from value %s more or equal then to value %s", fromValue, toValue));
             return -1;
         }
-        List<Integer> polindroms = new ArrayList<>();
         int polindromMaxValue = 0;
         for (int i = fromValue; i < toValue; i++)
             for (int j = toValue; j > i + 1; j = j - 1) {
@@ -22,10 +19,9 @@ public class ResearchPalindromeService {
                     if (polindromMaxValue < polindrom) {
                         polindromMaxValue = polindrom;
                     }
-                    polindroms.add(polindrom);
                 }
             }
-        LOGGER.info(String.format("Find %s polindromes max value is %s", (polindroms.size()), polindromMaxValue));
+        LOGGER.info(String.format("Find polindromes max value is %s", polindromMaxValue));
         return polindromMaxValue;
     }
 

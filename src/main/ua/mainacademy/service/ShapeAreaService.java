@@ -8,8 +8,8 @@ public class ShapeAreaService {
 
     public static Logger LOGGER = Logger.getLogger(ShapeAreaService.class.getName());
 
-    public static double getArea(Shape shape){
+    public static double getArea(Shape shape) {
         LOGGER.info(String.format("Getting area for %s ", shape.getClass().getSimpleName()));
         return shape.getArea();
-    };
+    }
 }

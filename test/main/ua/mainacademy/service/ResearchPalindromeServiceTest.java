@@ -11,14 +11,13 @@ class ResearchPalindromeServiceTest {
     void shouldReturnPolindromeMaxValue() {
         int expectedValue = 99000099;
         assertEquals(expectedValue,
-                ResearchPalindromeService.getPolindromeMaxValue(1000,9999));
+                ResearchPalindromeService.getPolindromeMaxValue(1000, 9999));
     }
 
     @Test
     void shouldReturnError() {
         int expectedValue = -1;
-        System.out.println(String.valueOf(12345678).length());
         assertEquals(expectedValue,
-                ResearchPalindromeService.getPolindromeMaxValue(123,123));
+                ResearchPalindromeService.getPolindromeMaxValue(123, 123));
     }
 }

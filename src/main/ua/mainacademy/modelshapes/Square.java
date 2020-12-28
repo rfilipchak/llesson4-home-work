@@ -2,7 +2,7 @@ package main.ua.mainacademy.modelshapes;
 
 public class Square implements Shape {
 
-    private double side;
+    private final double side;
 
     public Square(double side) {
         this.side = side;
