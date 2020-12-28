@@ -8,16 +8,23 @@ class MultiplicationLessonServiceTest {
 
     @Test
     void getMultiplicationLessonForNumbers() {
-        String expectedString = "  12" + "\n" +
-                " 111" + "\n" +
-                " ---" + "\n" +
-                "  12" + "\n" +
-                " 12" + "\n" +
-                "12" + "\n" +
-                "----" + "\n" +
-                "1332";
+        String expectedString = "         1111111111" + "\n" +
+                "         1111111111" + "\n" +
+                "         ----------" + "\n" +
+                "         1111111111" + "\n" +
+                "        1111111111" + "\n" +
+                "       1111111111" + "\n" +
+                "      1111111111" + "\n" +
+                "     1111111111" + "\n" +
+                "    1111111111" + "\n" +
+                "   1111111111" + "\n" +
+                "  1111111111" + "\n" +
+                " 1111111111" + "\n" +
+                "1111111111" + "\n" +
+                "-------------------" + "\n" +
+                "1234567900987654321";
 
-        assertEquals(MultiplicationLessonService.getMultiplicationLessonForNumbers(12, 111), expectedString);
+        assertEquals(expectedString, MultiplicationLessonService.getMultiplicationLessonForNumbers(1111111111, 1111111111));
     }
 
     @Test
